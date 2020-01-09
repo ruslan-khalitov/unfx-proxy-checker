@@ -104,6 +104,10 @@ export default class Checker {
             return 'haproxy';
         }
 
+        if (body.match(/privoxy/i)) {
+            return 'privoxys';
+        }
+
         return null;
     }
 

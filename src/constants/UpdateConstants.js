@@ -1,7 +1,5 @@
-const LATEST_RELEASES_API_PATH = 'https://api.github.com/repos/assnctr/unfx-proxy-checker/releases';
-
 export const FETCH_CONFIG = {
-    url: LATEST_RELEASES_API_PATH,
+    url: 'https://api.github.com/repos/assnctr/unfx-proxy-checker/releases',
     json: true,
     timeout: 5000,
     headers: {

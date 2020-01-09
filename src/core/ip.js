@@ -7,6 +7,6 @@ export const getIP = url => {
 
         return rp.get({ timeout: 5000, url: url ? url : lookupUrl });
     } catch {
-        throw new Error('Ip lookup fail. Try later.');
+        throw new Error('IP lookup fail. Try later.');
     }
 };
