@@ -21,10 +21,10 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/assnctr/unfx-proxy-checker"
+        "url": "https://github.com/shadixaced/unfx-proxy-checker"
     },
     "bugs": {
-        "url": "https://github.com/assnctr/unfx-proxy-checker/issues"
+        "url": "https://github.com/shadixaced/unfx-proxy-checker/issues"
     },
     "homepage": "https://openproxy.space/software/proxy-checker",
     "scripts": {
@@ -127,12 +127,12 @@
         "publish": [
             {
                 "provider": "github",
-                "owner": "assnctr",
+                "owner": "shadixaced",
                 "repo": "unfx-proxy-checker",
                 "private": false
             }
         ],
-        "productName": "Unfx Proxy Checker",
+        "productName": "UNFX Proxy Checker",
         "copyright": "2019 assnctr (Open Proxy Space)",
         "extraResources": [
             "./files/**"
