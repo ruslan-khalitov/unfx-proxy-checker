@@ -32,7 +32,7 @@ const removeOldPropertyAndAddNew = (object, removeName, { name, value }) => {
 const transformPrevSettings = settings => {
     const transforms = [
         {
-            version: '1.5.3',
+            version: '1.6.3',
             action: input => {
                 return {
                     ...input,

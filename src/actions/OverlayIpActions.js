@@ -1,6 +1,6 @@
 import { getIP } from '../core/ip';
 import { wait } from '../misc/wait';
-import { isIP } from '../misc/regexes';
+import { isIPv4, isIPv6 } from '../misc/regexes';
 import { OVERLAY_IP_CHANGE_LOOKUP_STATUS, OVERLAY_IP_CHANGE_LOOKUP_TO_INITIAL } from '../constants/ActionTypes';
 import { setIP } from './IpActions';
 
@@ -40,7 +40,7 @@ export const IpLookup = chainEvent => async (dispatch, getState) => {
     try {
         const response = await getIP(ip.lookupUrl);
 
-        if (!isIP(response)) {
+        if (!isIPv4(response) || !isIPv6(response)) {
             return onError();
         }
 

@@ -105,7 +105,7 @@ export default class Checker {
         }
 
         if (body.match(/privoxy/i)) {
-            return 'privoxys';
+            return 'privoxy';
         }
 
         return null;
