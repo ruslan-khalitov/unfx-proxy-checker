@@ -2,7 +2,7 @@ import util from 'util';
 import rp from 'request-promise';
 import { uniq } from '../misc/array';
 import { readFile } from 'fs';
-import { isURL, findIPs, findIPsWithRanges } from '../misc/regexes';
+import { isURL, findIPv4s, findIPv6s, findLuminatisIPs, findIPsWithRanges } from '../misc/regexes';
 import { cidrSubnet } from 'ip';
 
 const readFilePromisify = util.promisify(readFile);
@@ -73,9 +73,11 @@ export default class Blacklist {
     }
 
     getIPs(content) {
-        const ips = findIPs(content);
+        const ips = findIPv4s(content);
+        const ipv6s = findIPv6s(content);
+        const luminati = findLuminatisIPs(content);
         const ipsWithRanges = findIPsWithRanges(content);
-        const result = ips && ipsWithRanges ? [...ips, ...ipsWithRanges] : ips ? ips : ipsWithRanges;
+        const result = ips && ipv6s && luminati && ipsWithRanges ? [...ips, ...ipv6s, ...luminati, ...ipsWithRanges] : ips ? ips : ipsWithRanges ? ips : ipv6s ? ips : luminati;
 
         return uniq(result);
     }

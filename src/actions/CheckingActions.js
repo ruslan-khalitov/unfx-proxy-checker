@@ -2,7 +2,7 @@ import Core from '../core';
 import Judges from '../core/judges';
 import { wait } from '../misc/wait';
 import { shuffle } from '../misc/array';
-import { isURL, isIPv4, isIPv6, isPath } from '../misc/regexes';
+import { isURL, isIPv4, isPath } from '../misc/regexes';
 import { IpLookup } from './OverlayIpActions';
 import Blacklist from '../core/blacklist';
 import { CHECKING_UP_COUNTER_STATUS, CHECKING_OPEN, CHECKING_OTHER_CHANGES } from '../constants/ActionTypes';
@@ -79,7 +79,7 @@ export const start = () => async (dispatch, getState) => {
 
         const chainCheck = ip => Core.start(proxyList, core, initJudges, protocols, ip, initBlacklist);
 
-        if (isIPv4(ip.current) || isIPv6(ip.current)) {
+        if (isIPv4(ip.current)) {
             chainCheck(ip.current);
         } else {
             dispatch(IpLookup(chainCheck));
