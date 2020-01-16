@@ -88,6 +88,25 @@ export const save = () => async (dispatch, getState) => {
     }
 };
 
+export const saveCountriesProxies = () => async (dispatch, getState) => {
+    const saveType = getState().result.exporting.type == 1 ? getResultsInIpPort : getResultsInCountryIpPort;
+
+    const { filePath } = await dialog.showSaveDialog({
+        filters: [
+            {
+                name: 'Text Files',
+                extensions: ['txt']
+            }
+        ]
+    });
+
+    if (filePath) {
+        writeFile(filePath, saveType(getFilteredProxies(getState())), () => {
+            dispatch(toggleExport());
+        });
+    }
+};
+
 export const close = () => ({
     type: RESULT_CLOSE
 });

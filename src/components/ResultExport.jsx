@@ -1,5 +1,5 @@
 import React from 'react';
-import { getResultsInIpPort, getResultsInProtocolIpPort } from '../actions/ResultActions';
+import { getResultsInIpPort, getResultsInProtocolIpPort, getResultsInCountryIpPort, saveCountriesProxies } from '../actions/ResultActions';
 
 import '../../public/styles/ResultExport.postcss';
 
@@ -40,6 +40,7 @@ const ResultExport = ({ active, items, type, toggleExport, changeExportType, sav
                 </label>
             </div>
             <button onClick={save}>Save</button>
+            <button onClick={saveCountriesProxies}>Save (Countries - IP / Port only)</button>
         </div>
     </div>
 );
