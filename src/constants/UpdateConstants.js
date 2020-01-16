@@ -3,6 +3,6 @@ export const FETCH_CONFIG = {
     json: true,
     timeout: 5000,
     headers: {
-        'User-Agent': 'Unfx Version Lookup'
+        'User-Agent': 'UNFX Version Lookup'
     }
 };

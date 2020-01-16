@@ -59,6 +59,16 @@ export const getResultsInProtocolIpPort = items => {
     return content;
 };
 
+export const getResultsInCountryIpPort = items => {
+    let content = '';
+
+    items.forEach(item => {
+        content += item.country + '-' + item.ip + ':' + item.port + '\r\n';
+    });
+
+    return content;
+};
+
 export const save = () => async (dispatch, getState) => {
     const saveType = getState().result.exporting.type == 1 ? getResultsInIpPort : getResultsInProtocolIpPort;
 

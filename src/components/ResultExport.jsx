@@ -29,6 +29,15 @@ const ResultExport = ({ active, items, type, toggleExport, changeExportType, sav
                         <textarea value={`Example:\r\n${getResultsInProtocolIpPort(items)}.....`} rows="5" readOnly />
                     </div>
                 </label>
+                <label>
+                    <input type="radio" value={3} checked={type == 3} onChange={changeExportType} />
+                    <div className="type-card">
+                        <div className="type-desc">
+                        <span>Country -</span><span>Ip</span>:<span>Port</span>
+                        </div>
+                        <textarea value={`Example:\r\n${getResultsInCountryIpPort(items)}.....`} rows="5" readOnly />
+                    </div>
+                </label>
             </div>
             <button onClick={save}>Save</button>
         </div>

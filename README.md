@@ -14,10 +14,10 @@ Full description & Documentation for [Proxy Checker](https://openproxy.space/sof
 [Premium](https://openproxy.space/premium) - Buy Proxy List  
 [Free Proxy List](https://openproxy.space/list) - Always Updated Proxy Lists
 
-#### Unfx Proxy Tools
-[Unfx Proxy Checker](https://openproxy.space/software/proxy-checker) - Powerful proxy checker with huge features and beautiful design.  
-[Unfx Proxy Parser](https://openproxy.space/software/proxy-parser) - Nextgen proxy parser with deep links crawler.  
-[Unfx Proxy To Country](https://openproxy.space/software/proxy-to-country) - Sort your proxy list from ip:port format by countries.  
+#### Unfx Proxy Tools (original developer website)
+[UNFX Proxy Checker](https://openproxy.space/software/proxy-checker) - Powerful proxy checker with huge features and beautiful design.  
+[UNFX Proxy Parser](https://openproxy.space/software/proxy-parser) - Nextgen proxy parser with deep links crawler.  
+[UNFX Proxy To Country](https://openproxy.space/software/proxy-to-country) - Sort your proxy list from ip:port format by countries.  
 
 #### Misc
 [Utilify Me](https://utilify.me/) - Online Tools & Utilities
