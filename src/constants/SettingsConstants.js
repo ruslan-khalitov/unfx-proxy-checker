@@ -30,11 +30,6 @@ export const DEFAULT_JUDGES_SETTINGS = {
     items: [
         {
             active: true,
-            url: 'http://proxyjudge.info/azenv.php',
-            validate: 'AZ Environment variables'
-        },
-        {
-            active: true,
             url: 'http://www.sbjudge3.com/azenv.php',
             validate: 'AZ Environment variables'
         },
@@ -46,11 +41,6 @@ export const DEFAULT_JUDGES_SETTINGS = {
         {
             active: true,
             url: 'http://azenv.net/',
-            validate: 'AZ Environment variables'
-        },
-        {
-            active: true,
-            url: 'http://www.cooleasy.com/azenv.php',
             validate: 'AZ Environment variables'
         },
         {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { getResultsInIpPort, getResultsInProtocolIpPort, getResultsInCountryIpPort, saveCountriesProxies } from '../actions/ResultActions';
+import { getResultsInIpPort, getResultsInProtocolIpPort, getResultsInCountryIpPort } from '../actions/ResultActions';
 
 import '../../public/styles/ResultExport.postcss';
 
@@ -33,14 +33,13 @@ const ResultExport = ({ active, items, type, toggleExport, changeExportType, sav
                     <input type="radio" value={3} checked={type == 3} onChange={changeExportType} />
                     <div className="type-card">
                         <div className="type-desc">
-                        <span>Country -</span><span>Ip</span>:<span>Port</span>
+                        <span>Country</span>-<span>Ip</span>:<span>Port</span>
                         </div>
                         <textarea value={`Example:\r\n${getResultsInCountryIpPort(items)}.....`} rows="5" readOnly />
                     </div>
                 </label>
             </div>
             <button onClick={save}>Save</button>
-            <button onClick={saveCountriesProxies}>Save (Countries - IP / Port only)</button>
         </div>
     </div>
 );

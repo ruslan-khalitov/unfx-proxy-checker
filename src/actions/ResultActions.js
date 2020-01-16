@@ -63,15 +63,14 @@ export const getResultsInCountryIpPort = items => {
     let content = '';
 
     items.forEach(item => {
-        content += item.country + '-' + item.ip + ':' + item.port + '\r\n';
+        content += item.country.name + ' - ' + item.ip + ':' + item.port + '\r\n';
     });
 
     return content;
 };
 
 export const save = () => async (dispatch, getState) => {
-    const saveType = getState().result.exporting.type == 1 ? getResultsInIpPort : getResultsInProtocolIpPort;
-
+    const saveType = getState().result.exporting.type;
     const { filePath } = await dialog.showSaveDialog({
         filters: [
             {
@@ -81,26 +80,7 @@ export const save = () => async (dispatch, getState) => {
         ]
     });
 
-    if (filePath) {
-        writeFile(filePath, saveType(getFilteredProxies(getState())), () => {
-            dispatch(toggleExport());
-        });
-    }
-};
-
-export const saveCountriesProxies = () => async (dispatch, getState) => {
-    const saveType = getState().result.exporting.type == 1 ? getResultsInIpPort : getResultsInCountryIpPort;
-
-    const { filePath } = await dialog.showSaveDialog({
-        filters: [
-            {
-                name: 'Text Files',
-                extensions: ['txt']
-            }
-        ]
-    });
-
-    if (filePath) {
+    if (filePath && saveType == 1 || saveType == 2 || saveType == 3) {
         writeFile(filePath, saveType(getFilteredProxies(getState())), () => {
             dispatch(toggleExport());
         });
