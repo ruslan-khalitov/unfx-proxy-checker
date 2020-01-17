@@ -63,14 +63,16 @@ export const getResultsInCountryIpPort = items => {
     let content = '';
 
     items.forEach(item => {
+        if (item.protocols.length == 1) {
         content += item.country.name + ' - ' + item.ip + ':' + item.port + '\r\n';
+        }
     });
 
     return content;
 };
 
 export const save = () => async (dispatch, getState) => {
-    const saveType = getState().result.exporting.type;
+    const saveType = getState().result.exporting.type == 1 ? getResultsInIpPort : getResultsInProtocolIpPort ? getResultsInProtocolIpPort : getResultsInCountryIpPort ? getResultsInCountryIpPort : getResultsInIpPort;
     const { filePath } = await dialog.showSaveDialog({
         filters: [
             {
@@ -80,7 +82,7 @@ export const save = () => async (dispatch, getState) => {
         ]
     });
 
-    if (filePath && saveType == 1 || saveType == 2 || saveType == 3) {
+    if (filePath) {
         writeFile(filePath, saveType(getFilteredProxies(getState())), () => {
             dispatch(toggleExport());
         });
