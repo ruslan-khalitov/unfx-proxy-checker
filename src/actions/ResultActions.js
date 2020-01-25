@@ -22,6 +22,7 @@ import {
 } from '../constants/ActionTypes';
 import { otherChanges } from './CheckingActions';
 import { wait } from '../misc/wait';
+import { isNullOrUndefined } from 'util';
 
 const { dialog } = remote;
 
@@ -63,7 +64,7 @@ export const getResultsInCountryIpPort = items => {
     let content = '';
 
     items.forEach(item => {
-        if (item.protocols.length == 1) {
+        if (item.country.name.length > 1) {
         content += item.country.name + ' - ' + item.ip + ':' + item.port + '\r\n';
         }
     });
@@ -72,7 +73,7 @@ export const getResultsInCountryIpPort = items => {
 };
 
 export const save = () => async (dispatch, getState) => {
-    const saveType = getState().result.exporting.type == 1 ? getResultsInIpPort : getResultsInProtocolIpPort ? getResultsInProtocolIpPort : getResultsInCountryIpPort ? getResultsInCountryIpPort : getResultsInIpPort;
+    const saveType = getState().result.exporting.type == 1 ? getResultsInIpPort : getResultsInProtocolIpPort ? getResultsInCountryIpPort : getResultsInIpPort;
     const { filePath } = await dialog.showSaveDialog({
         filters: [
             {
