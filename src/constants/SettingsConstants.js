@@ -99,7 +99,7 @@ export const DEFAULT_EXPORTING_SETTINGS = {
 };
 
 export const DEFAULT_MAIN_SETTINGS = {
-    dark: false
+    dark: true
 };
 
 export const MERGED_DEFAULT_SETTINGS = {

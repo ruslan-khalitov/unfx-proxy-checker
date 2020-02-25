@@ -108,6 +108,22 @@ export default class Checker {
             return 'privoxy';
         }
 
+        if (body.match(/jaguar/i)) {
+            return 'jaguar';
+        }
+
+        if (body.match(/Cisco-WSA/i)) {
+            return 'cisco-wsa';
+        }
+
+        if (body.match(/3proxy/i)) {
+            return '3proxy';
+        }
+
+        if (body.match(/Apache/i)) {
+            return 'apache';
+        }
+
         return null;
     }
 
