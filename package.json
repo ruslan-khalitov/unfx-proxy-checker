@@ -1,6 +1,6 @@
 {
     "name": "unfx-proxy-checker",
-    "version": "1.6.3",
+    "version": "1.6.4",
     "main": "public/main.js",
     "license": "MIT",
     "author": {
@@ -39,25 +39,25 @@
     },
     "devDependencies": {
         "@babel/cli": "^7.8.4",
-        "@babel/core": "^7.8.4",
+        "@babel/core": "^7.8.6",
         "@babel/plugin-proposal-class-properties": "^7.8.3",
         "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
         "@babel/plugin-transform-runtime": "^7.8.3",
-        "@babel/preset-env": "^7.8.4",
+        "@babel/preset-env": "^7.8.6",
         "@babel/preset-react": "^7.8.3",
-        "@babel/register": "^7.8.3",
+        "@babel/register": "^7.8.6",
         "@babel/runtime": "^7.8.4",
         "babel-loader": "^8.0.6",
         "cross-env": "^7.0.0",
         "css-loader": "^3.4.2",
-        "electron": "^8.0.0",
+        "electron": "^8.0.2",
         "electron-builder": "^22.3.2",
         "electron-devtools-installer": "^2.2.4",
         "electron-react-devtools": "^0.5.3",
-        "electron-updater": "^4.2.0",
-        "file-loader": "^5.0.2",
+        "electron-updater": "^4.2.2",
+        "file-loader": "^5.1.0",
         "ip": "^1.1.5",
-        "js-flock": "^3.12.0",
+        "js-flock": "^3.13.0",
         "maxmind": "^4.1.0",
         "npm-run-all": "^4.1.5",
         "postcss-color-function": "^4.1.0",
@@ -65,22 +65,22 @@
         "postcss-easings": "^2.0.0",
         "postcss-loader": "^3.0.0",
         "postcss-preset-env": "^6.7.0",
-        "react": "^16.12.0",
-        "react-dom": "^16.12.0",
+        "react": "^16.13.0",
+        "react-dom": "^16.13.0",
         "react-hot-loader": "^4.12.19",
         "react-markdown": "^4.3.1",
-        "react-redux": "^7.1.3",
+        "react-redux": "^7.2.0",
         "react-tabs": "^3.1.0",
         "redux": "^4.0.5",
         "redux-thunk": "^2.3.0",
-        "request": "^2.88.0",
+        "request": "^2.88.2",
         "request-promise": "^4.2.5",
         "reselect": "^4.0.0",
         "socks-proxy-agent": "^5.0.0",
         "style-loader": "^1.1.3",
         "url-loader": "^3.0.0",
-        "webpack": "^4.41.5",
-        "webpack-cli": "^3.3.10",
+        "webpack": "^4.41.6",
+        "webpack-cli": "^3.3.11",
         "webpack-dev-server": "^3.10.3"
     },
     "build": {
@@ -133,7 +133,7 @@
             }
         ],
         "productName": "UNFX Proxy Checker",
-        "copyright": "2019 assnctr (Open Proxy Space)",
+        "copyright": "2020 assnctr (Open Proxy Space)",
         "extraResources": [
             "./files/**"
         ],
@@ -148,6 +148,7 @@
         }
     },
     "dependencies": {
-        "@types/react": "^16.9.19"
+        "@types/react": "^16.9.23",
+        "fs-extra": "^8.1.0"
     }
 }
