@@ -5,8 +5,6 @@ import SocksProxyAgent from 'socks-proxy-agent';
 import { openChecking, upCounterStatus } from '../actions/CheckingActions';
 import { showResult } from '../actions/ResultActions';
 import { collar } from 'js-flock';
-import fs from 'fs-extra';
-import util from 'util';
 
 export default class Checker {
     constructor(proxies, options, ip, judges, targetProtocols, blacklist) {
@@ -82,63 +80,42 @@ export default class Checker {
     }
 
     getServer(body) {
-        if (body.match(/squid/i)) {
-            return 'squid';
+        switch(body) {
+            case body.match(/squid/i): 
+                return 'squid';
+            case body.match(/mikrotik/i): 
+                return 'mikrotik';
+            case body.match(/tinyproxy/i): 
+                return 'tinyproxy';
+            case body.match(/litespeed/i): 
+                return 'litespeed';
+            case body.match(/varnish/i): 
+                return 'varnish';
+            case body.match(/haproxy/i):
+                return 'haproxy';
+            case body.match(/privoxy/i):
+                return 'privoxy';
+            case body.match(/jaguar/i):
+                return 'jaguar';
+            case body.match(/cisco-wsa/i):
+                return 'cisco-wsa';
+            case body.match(/3proxy/i):
+                return '3proxy';
+            case body.match(/apache/i):
+                return 'apache';
+            default: 
+                return null;
         }
-
-        else if (body.match(/mikrotik/i)) {
-            return 'mikrotik';
-        }
-
-        else if (body.match(/tinyproxy/i)) {
-            return 'tinyproxy';
-        }
-
-        else if (body.match(/litespeed/i)) {
-            return 'litespeed';
-        }
-
-        else if (body.match(/varnish/i)) {
-            return 'varnish';
-        }
-
-        else if (body.match(/haproxy/i)) {
-            return 'haproxy';
-        }
-
-        else if (body.match(/privoxy/i)) {
-            return 'privoxy';
-        }
-
-        else if (body.match(/jaguar/i)) {
-            return 'jaguar';
-        }
-
-        else if (body.match(/Cisco-WSA/i)) {
-            return 'cisco-wsa';
-        }
-
-        else if (body.match(/3proxy/i)) {
-            return '3proxy';
-        }
-
-        else if (body.match(/Apache/i)) {
-            return 'apache';
-        }
-
-        else return null;
     }
 
     getAnon(body) {
-        if (body.match(new RegExp(this.ip))) {
-            return 'transparent';
+        switch(body) {
+        case body.match(new RegExp(this.ip)): 
+            return 'transparent'
+        case body.match(/HTTP_VIA|PROXY_REMOTE_ADDR/):
+            return 'anonymous'
+        default: return 'elite';
         }
-
-        else if (body.match(/HTTP_VIA|PROXY_REMOTE_ADDR/)) {
-            return 'anonymous';
-        }
-
-        else return 'elite';
     }
 
     setKeepAlive(proxy, headers) {
@@ -293,6 +270,6 @@ export default class Checker {
             for (let index = 0; index < startThreadsCount; index++) {
                 this.run();
             }
-        }, 300);
+        }, 1000);
     }
 }
