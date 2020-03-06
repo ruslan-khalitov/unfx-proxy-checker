@@ -72,8 +72,8 @@ export const start = () => async (dispatch, getState) => {
         }
 
         const proxyList = core.shuffle ? shuffle([...input.list]) : [...input.list];
-        const initBlacklist = blacklist.filter ? new Blacklist(blacklist.items) : false;
-        const initJudges = new Judges({ swap: judges.swap, items: activeJudges }, protocols);
+        const initBlacklist = blacklist.filter ? await new Blacklist(blacklist.items) : false;
+        const initJudges = await new Judges({ swap: judges.swap, items: activeJudges }, protocols);
 
         if (!initJudges) return;
 

@@ -76,7 +76,7 @@ export default class Checker {
             return { agent };
         }
 
-        return { proxy: 'http://' + proxy };
+        else return { proxy: 'http://' + proxy };
     }
 
     getServer(body) {
@@ -188,7 +188,7 @@ export default class Checker {
             };
         }
 
-        if (protocols.length == 4) {
+        else if (protocols.length == 4) {
             return proxy => {
                 this.checkProtocol(proxy, 'http');
                 this.checkProtocol(proxy, 'https');
@@ -270,6 +270,6 @@ export default class Checker {
             for (let index = 0; index < startThreadsCount; index++) {
                 this.run();
             }
-        }, 1000);
+        }, 300);
     }
 }

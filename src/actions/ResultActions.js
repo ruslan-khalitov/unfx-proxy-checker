@@ -22,7 +22,6 @@ import {
 } from '../constants/ActionTypes';
 import { otherChanges } from './CheckingActions';
 import { wait } from '../misc/wait';
-import { isNullOrUndefined } from 'util';
 
 const { dialog } = remote;
 
