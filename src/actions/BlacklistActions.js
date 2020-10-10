@@ -1,7 +1,6 @@
-import { remote } from 'electron';
+import { dialog } from 'electron';
 import { BLACKLIST_CHANGE_ITEM_PATH, BLACKLIST_ADD_ITEM, BLACKLIST_REMOVE_ITEM, BLACKLIST_TOGGLE_OPTION, BLACKLIST_SET_ACTIVE_ITEM } from '../constants/ActionTypes';
 
-const { dialog } = remote;
 
 export const changePath = (title, path) => ({
     type: BLACKLIST_CHANGE_ITEM_PATH,

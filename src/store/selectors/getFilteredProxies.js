@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { sort } from 'js-flock';
+import sort from 'fast-sort';
 
 const getItems = state => state.result.items;
 

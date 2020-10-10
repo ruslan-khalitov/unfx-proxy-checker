@@ -18,11 +18,14 @@ const devWindow = () => {
         show: false,
         frame: false,
         webPreferences: {
-            nodeIntegration: true
+            nodeIntegration: true,
+            enableRemoteModule: true,
+            worldSafeExecuteJavaScript: true
         }
     });
-
-    window.webContents.openDevTools();
+    window.on('ready-to-show', () => {
+        window.webContents.openDevTools();
+    });
 };
 
 const prodWindow = () => {
@@ -35,7 +38,9 @@ const prodWindow = () => {
         frame: false,
         resizable: true,
         webPreferences: {
-            nodeIntegration: true
+            nodeIntegration: true,
+            enableRemoteModule: true,
+            worldSafeExecuteJavaScript: true
         }
     });
 

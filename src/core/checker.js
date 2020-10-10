@@ -91,8 +91,6 @@ export default class Checker {
                 return 'litespeed';
             case body.match(/varnish/i): 
                 return 'varnish';
-            case body.match(/haproxy/i):
-                return 'haproxy';
             case body.match(/privoxy/i):
                 return 'privoxy';
             case body.match(/jaguar/i):
@@ -103,6 +101,10 @@ export default class Checker {
                 return '3proxy';
             case body.match(/apache/i):
                 return 'apache';
+            case body.match(/polipo/i):
+                return 'polipo';
+            case body.match(/nginx/i):
+                return 'nginx-proxy';
             default: 
                 return null;
         }

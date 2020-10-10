@@ -10,7 +10,7 @@ export default class BlacklistItem extends React.PureComponent {
 
     changePath = e => {
         const { changePath, setActive, title } = this.props;
-        const activeState = e.target.value.length > 0 ? true : false;
+        const activeState = e.target.value.length > 0;
         changePath(title, e.target.value);
         setActive(title, activeState);
     };

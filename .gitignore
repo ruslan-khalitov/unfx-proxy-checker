@@ -3,6 +3,6 @@ npm-debug.log
 settings.unfx.checker.json
 /public/*.js
 /.vscode
+/.idea
 dist
-package-lock.json
 tests
